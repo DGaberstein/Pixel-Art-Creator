@@ -7,11 +7,17 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <header>
+        <h1>Pixel Art Creator</h1>
+    </header>
     <div id="register-screen" class="screen active">
         <h2>Register</h2>
         <form id="register-form">
-            <input type="text" id="register-username" placeholder="Username" required>
-            <input type="password" id="register-password" placeholder="Password" required>
+            <input type="email" id="register-email" placeholder="Email" required>
+            <div class="password-container">
+                <input type="password" id="register-password" placeholder="Password" required>
+                <span class="toggle-password" onclick="togglePasswordVisibility('register-password')">👁️</span>
+            </div>
             <button type="submit">Register</button>
         </form>
     </div>

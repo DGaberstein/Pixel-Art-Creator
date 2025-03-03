@@ -29,7 +29,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     menuButton.addEventListener('click', () => {
         sideMenu.classList.toggle('active');
-        sideMenu.classList.toggle('animated');
     });
 
     const pixelSizeSelect = document.getElementById('pixel-size');
@@ -85,3 +84,12 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initialize the canvas with the default pixel size
     initializeCanvas(parseInt(pixelSizeSelect.value));
 });
+
+function togglePasswordVisibility(inputId) {
+    const input = document.getElementById(inputId);
+    if (input.type === 'password') {
+        input.type = 'text';
+    } else {
+        input.type = 'password';
+    }
+}
