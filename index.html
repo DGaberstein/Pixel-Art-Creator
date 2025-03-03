@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pixel Art Creator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <button id="menu-button">
+            <div class="menu-icon"></div>
+        </button>
+        <h1>Pixel Art Creator</h1>
+    </header>
+    <nav id="side-menu" class="side-menu">
+        <a href="#">HOME</a>
+        <a href="#">CREATE ACCOUNT</a>
+        <a href="#">FULL SCREEN</a>
+        <a href="#">GALLERY</a>
+        <a href="#">TUTORIALS</a>
+        <a href="#">CONTESTS</a>
+        <a href="#">ABOUT</a>
+        <a href="#">MOBILE APP</a>
+        <a href="#">SAVE DRAWING</a>
+    </nav>
+    <div id="art-creator" class="screen">
+        <h2>Pixel Art Creator</h2>
+        <label for="pixel-size">Select Pixel Size:</label>
+        <select id="pixel-size">
+            <option value="8">8x8</option>
+            <option value="16">16x16</option>
+            <option value="32">32x32</option>
+            <option value="64">64x64</option>
+            <option value="128">128x128</option>
+            <option value="256">256x256</option>
+            <option value="512">512x512</option>
+        </select>
+        <label for="color-picker">Select Color:</label>
+        <input type="color" id="color-picker" value="#000000">
+        <canvas id="pixel-canvas"></canvas>
+        <button id="clear-canvas">Clear Canvas</button>
+        <!-- Pixel art creation tools will go here -->
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

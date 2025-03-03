@@ -1,0 +1,158 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+}
+
+header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+    position: relative;
+}
+
+#menu-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    left: 10px;
+}
+
+.menu-icon {
+    width: 24px;
+    height: 2px;
+    background-color: white;
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.menu-icon::before,
+.menu-icon::after {
+    content: '';
+    width: 24px;
+    height: 2px;
+    background-color: white;
+    position: absolute;
+    left: 0;
+    transition: transform 0.3s ease;
+}
+
+.menu-icon::before {
+    top: -8px;
+}
+
+.menu-icon::after {
+    top: 8px;
+}
+
+.menu {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    top: 50px;
+    left: 10px;
+    z-index: 1;
+    animation: slideIn 0.3s forwards;
+}
+
+.menu.active {
+    display: flex;
+}
+
+.side-menu {
+    position: fixed;
+    left: -250px;
+    top: 0;
+    width: 250px;
+    height: 100%;
+    background-color: #007bff;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+    transition: left 0.3s ease;
+}
+
+.side-menu a {
+    color: white;
+    text-decoration: none;
+    margin: 10px 0;
+}
+
+.side-menu.active {
+    left: 0;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.screen {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.screen.active {
+    display: flex;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+input {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: #28a745;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+canvas {
+    border: 1px solid #ccc;
+    margin-top: 20px;
+}
+
+#color-picker {
+    margin-top: 10px;
+}
