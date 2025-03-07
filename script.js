@@ -31,6 +31,13 @@ document.addEventListener('DOMContentLoaded', () => {
         sideMenu.classList.toggle('active');
     });
 
+    // Close the menu when clicking outside of it
+    document.addEventListener('click', (e) => {
+        if (!sideMenu.contains(e.target) && !menuButton.contains(e.target)) {
+            sideMenu.classList.remove('active');
+        }
+    });
+
     const pixelSizeSelect = document.getElementById('pixel-size');
     const colorPicker = document.getElementById('color-picker');
     const canvas = document.getElementById('pixel-canvas');
@@ -38,6 +45,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const ctx = canvas.getContext('2d');
 
     let currentColor = colorPicker.value;
+    let isDrawing = false;
+    let lastX = 0;
+    let lastY = 0;
 
     pixelSizeSelect.addEventListener('change', () => {
         const pixelSize = parseInt(pixelSizeSelect.value);
@@ -73,12 +83,33 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     canvas.addEventListener('mousedown', (e) => {
+        isDrawing = true;
+        const pixelSize = parseInt(pixelSizeSelect.value);
+        const rect = canvas.getBoundingClientRect();
+        [lastX, lastY] = [Math.floor((e.clientX - rect.left) / pixelSize) * pixelSize, Math.floor((e.clientY - rect.top) / pixelSize) * pixelSize];
+        ctx.fillStyle = currentColor;
+        ctx.fillRect(lastX, lastY, pixelSize, pixelSize);
+    });
+
+    canvas.addEventListener('mousemove', (e) => {
+        if (!isDrawing) return;
         const pixelSize = parseInt(pixelSizeSelect.value);
         const rect = canvas.getBoundingClientRect();
         const x = Math.floor((e.clientX - rect.left) / pixelSize) * pixelSize;
         const y = Math.floor((e.clientY - rect.top) / pixelSize) * pixelSize;
-        ctx.fillStyle = currentColor;
-        ctx.fillRect(x, y, pixelSize, pixelSize);
+        if (x !== lastX || y !== lastY) {
+            ctx.fillStyle = currentColor;
+            ctx.fillRect(x, y, pixelSize, pixelSize);
+            [lastX, lastY] = [x, y];
+        }
+    });
+
+    canvas.addEventListener('mouseup', () => {
+        isDrawing = false;
+    });
+
+    canvas.addEventListener('mouseout', () => {
+        isDrawing = false;
     });
 
     // Initialize the canvas with the default pixel size

@@ -173,3 +173,34 @@ canvas {
 #color-picker {
     margin-top: 10px;
 }
+
+#app {
+    display: flex;
+    flex: 1;
+}
+
+#side-menu {
+    width: 200px;
+    background-color: #333;
+    color: #fff;
+    padding: 1rem;
+}
+
+#canvas-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0;
+}
+
+#pixel-canvas {
+    border: 1px solid #ccc;
+}
+
+#footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+}
