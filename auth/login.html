@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <header>
+        <span onclick="openNav()">&#9776; open</span>
+        <h1>Pixel Art Creator</h1>
+    </header>
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="../pages/home.html">HOME</a>
+        <a href="register.html">CREATE ACCOUNT</a>
+        <a href="../pages/full_screen.html">FULL SCREEN</a>
+        <a href="../pages/gallery.html">GALLERY</a>
+        <a href="../pages/tutorials.html">TUTORIALS</a>
+        <a href="../pages/contests.html">CONTESTS</a>
+        <a href="../pages/about.html">ABOUT</a>
+        <a href="../pages/mobile_app.html">MOBILE APP</a>
+        <a href="../pages/save_drawing.html">SAVE DRAWING</a>
+        <a href="login.html">LOGIN</a>
+    </div>
+    <div id="main">
+        <div id="login-screen" class="screen active">
+            <h2>Login</h2>
+            <form id="login-form">
+                <input type="email" id="login-email" placeholder="Email" required>
+                <div class="password-container">
+                    <input type="password" id="login-password" placeholder="Password" required>
+                    <span class="toggle-password" onclick="togglePasswordVisibility('login-password')">👁️</span>
+                </div>
+                <button type="submit">Login</button>
+            </form>
+        </div>
+    </div>
+    <script src="../script.js"></script>
+</body>
+</html>

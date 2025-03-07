@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <header>
+        <span id="openNavButton" onclick="openNav()">&#9776; open</span>
+        <h1>Pixel Art Creator</h1>
+    </header>
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="home.html">HOME</a>
+        <a href="../auth/register.html">CREATE ACCOUNT</a>
+        <a href="../auth/login.html">LOGIN</a>
+        <a href="full_screen.html">FULL SCREEN</a>
+        <a href="gallery.html">GALLERY</a>
+        <a href="tutorials.html">TUTORIALS</a>
+        <a href="contests.html">CONTESTS</a>
+        <a href="about.html">ABOUT</a>
+        <a href="mobile_app.html">MOBILE APP</a>
+        <a href="save_drawing.html">SAVE DRAWING</a>
+    </div>
+    <div id="overlay" class="overlay" onclick="closeNav()"></div>
+    <div id="main">
+        <div id="create-account-screen" class="screen active">
+            <h2>Create Account</h2>
+            <form id="create-account-form">
+                <input type="email" id="create-account-email" placeholder="Email" required>
+                <div class="password-container">
+                    <input type="password" id="create-account-password" placeholder="Password" required>
+                    <span class="toggle-password" onclick="togglePasswordVisibility('create-account-password')">👁️</span>
+                </div>
+                <button type="submit">Create Account</button>
+            </form>
+        </div>
+    </div>
+    <script src="../script.js"></script>
+</body>
+</html>

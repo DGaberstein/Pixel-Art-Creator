@@ -3,15 +3,15 @@ const router = express.Router();
 const User = require('../models/user');
 
 router.post('/register', async (req, res) => {
-    const { username, password } = req.body;
-    const user = new User({ username, password });
+    const { email, password } = req.body;
+    const user = new User({ email, password });
     await user.save();
     res.status(201).send('User registered');
 });
 
 router.post('/login', async (req, res) => {
-    const { username, password } = req.body;
-    const user = await User.findOne({ username, password });
+    const { email, password } = req.body;
+    const user = await User.findOne({ email, password });
     if (user) {
         res.status(200).send('Login successful');
     } else {

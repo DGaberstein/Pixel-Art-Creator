@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <header>
+        <span id="openNavButton" onclick="openNav()">&#9776; open</span>
+        <h1>Pixel Art Creator</h1>
+    </header>
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="home.html">HOME</a>
+        <a href="../auth/register.html">CREATE ACCOUNT</a>
+        <a href="../auth/login.html">LOGIN</a>
+        <a href="full_screen.html">FULL SCREEN</a>
+        <a href="gallery.html">GALLERY</a>
+        <a href="tutorials.html">TUTORIALS</a>
+        <a href="contests.html">CONTESTS</a>
+        <a href="about.html">ABOUT</a>
+        <a href="mobile_app.html">MOBILE APP</a>
+        <a href="save_drawing.html">SAVE DRAWING</a>
+    </div>
+    <div id="overlay" class="overlay" onclick="closeNav()"></div>
+    <div id="main">
+        <div id="home-screen" class="screen active">
+            <h2>Home</h2>
+            <p>Welcome to the Pixel Art Creator home page!</p>
+        </div>
+    </div>
+    <script src="../script.js"></script>
+</body>
+</html>

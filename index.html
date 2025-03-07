@@ -8,65 +8,68 @@
 </head>
 <body>
     <header>
-        <button id="menu-button">
-            <div class="menu-icon"></div>
-        </button>
+        <span id="openNavButton" onclick="openNav()">&#9776; open</span>
         <h1>Pixel Art Creator</h1>
     </header>
-    <nav id="side-menu" class="side-menu">
-        <a href="#">HOME</a>
-        <a href="#">CREATE ACCOUNT</a>
-        <a href="#">FULL SCREEN</a>
-        <a href="#">GALLERY</a>
-        <a href="#">TUTORIALS</a>
-        <a href="#">CONTESTS</a>
-        <a href="#">ABOUT</a>
-        <a href="#">MOBILE APP</a>
-        <a href="#">SAVE DRAWING</a>
-    </nav>
-    <div id="register-screen" class="screen">
-        <h2>Register</h2>
-        <form id="register-form">
-            <div class="password-container">
-                <input type="text" id="register-username" placeholder="Username" required>
-            </div>
-            <div class="password-container">
-                <input type="password" id="register-password" placeholder="Password" required>
-                <span class="toggle-password" onclick="togglePasswordVisibility('register-password')">👁️</span>
-            </div>
-            <button type="submit">Register</button>
-        </form>
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="./pages/home.html">HOME</a>
+        <a href="./auth/register.html">CREATE ACCOUNT</a>
+        <a href="./auth/login.html">LOGIN</a>
+        <a href="./pages/full_screen.html">FULL SCREEN</a>
+        <a href="./pages/gallery.html">GALLERY</a>
+        <a href="./pages/tutorials.html">TUTORIALS</a>
+        <a href="./pages/contests.html">CONTESTS</a>
+        <a href="./pages/about.html">ABOUT</a>
+        <a href="./pages/mobile_app.html">MOBILE APP</a>
+        <a href="./pages/save_drawing.html">SAVE DRAWING</a>
     </div>
-    <div id="login-screen" class="screen">
-        <h2>Login</h2>
-        <form id="login-form">
-            <div class="password-container">
-                <input type="text" id="login-username" placeholder="Username" required>
-            </div>
-            <div class="password-container">
-                <input type="password" id="login-password" placeholder="Password" required>
-                <span class="toggle-password" onclick="togglePasswordVisibility('login-password')">👁️</span>
-            </div>
-            <button type="submit">Login</button>
-        </form>
-    </div>
-    <div id="art-creator" class="screen">
-        <h2>Pixel Art Creator</h2>
-        <label for="pixel-size">Select Pixel Size:</label>
-        <select id="pixel-size">
-            <option value="8">8x8</option>
-            <option value="16">16x16</option>
-            <option value="32">32x32</option>
-            <option value="64">64x64</option>
-            <option value="128">128x128</option>
-            <option value="256">256x256</option>
-            <option value="512">512x512</option>
-        </select>
-        <label for="color-picker">Select Color:</label>
-        <input type="color" id="color-picker" value="#000000">
-        <canvas id="pixel-canvas"></canvas>
-        <button id="clear-canvas">Clear Canvas</button>
-        <!-- Pixel art creation tools will go here -->
+    <div id="overlay" class="overlay" onclick="closeNav()"></div>
+    <div id="main">
+        <div id="register-screen" class="screen">
+            <h2>Register</h2>
+            <form id="register-form">
+                <div class="password-container">
+                    <input type="email" id="register-email" placeholder="Email" required>
+                </div>
+                <div class="password-container">
+                    <input type="password" id="register-password" placeholder="Password" required>
+                    <span class="toggle-password" onclick="togglePasswordVisibility('register-password')">👁️</span>
+                </div>
+                <button type="submit">Register</button>
+            </form>
+        </div>
+        <div id="login-screen" class="screen">
+            <h2>Login</h2>
+            <form id="login-form">
+                <div class="password-container">
+                    <input type="email" id="login-email" placeholder="Email" required>
+                </div>
+                <div class="password-container">
+                    <input type="password" id="login-password" placeholder="Password" required>
+                    <span class="toggle-password" onclick="togglePasswordVisibility('login-password')">👁️</span>
+                </div>
+                <button type="submit">Login</button>
+            </form>
+        </div>
+        <div id="art-creator" class="screen">
+            <h2>Pixel Art Creator</h2>
+            <label for="pixel-size">Select Pixel Size:</label>
+            <select id="pixel-size">
+                <option value="8">8x8</option>
+                <option value="16">16x16</option>
+                <option value="32">32x32</option>
+                <option value="64">64x64</option>
+                <option value="128">128x128</option>
+                <option value="256">256x256</option>
+                <option value="512">512x512</option>
+            </select>
+            <label for="color-picker">Select Color:</label>
+            <input type="color" id="color-picker" value="#000000">
+            <canvas id="pixel-canvas"></canvas>
+            <button id="clear-canvas">Clear Canvas</button>
+            <!-- Pixel art creation tools will go here -->
+        </div>
     </div>
     <script src="script.js"></script>
 </body>
